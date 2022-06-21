@@ -190,6 +190,20 @@ Extra configure fields (compared to [CLI client](#cli-client))
     "server_display_name": "TIS"  // The name of the server, used for display in some places
 ```
 
+
+## QQ Channel client
+
+`python ChatBridge.pyz qchannel`
+
+Extra requirements listed in `/chatbridge/impl/qchannel/requirements.txt`.
+
+Extra configure fields (compared to [CLI client](#cli-client))
+
+```json5
+// pass
+```
+
+
 ## Client to respond online command
 
 ```
