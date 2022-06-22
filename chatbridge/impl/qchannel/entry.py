@@ -1,4 +1,4 @@
-import qqbot
+import qqbot, re
 
 from chatbridge.core.client import ChatBridgeClient
 from chatbridge.core.config import ClientConfig
@@ -8,6 +8,7 @@ from chatbridge.impl import utils
 ConfigFile = 'ChatBridge_QChannel.json'
 LogFile = 'ChatBridge_QChannel.log'
 RetryTime = 3
+RemoveReg = re.compile(r'<@!\d+> ')
 
 
 class QQChannelConfig(ClientConfig):
@@ -26,7 +27,8 @@ class QChannelBot():
 
 		def _on_message(event, message: qqbot.Message):
 			"""On chat msg from QQ Channel"""
-			qqbot.logger.info('Message sent to Minecraft server: ' + message.content)
+			content = '<{}>'.format(message.author.username) + RemoveReg.sub(message.content, '', 1)
+			qqbot.logger.info('Message sent to Minecraft server: ' + content)
 			chatClient.send_chat(str(message.content))
 		self.msg_handler = qqbot.Handler(qqbot.HandlerType.AT_MESSAGE_EVENT_HANDLER, _on_message)
 
