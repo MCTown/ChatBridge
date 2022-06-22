@@ -27,7 +27,7 @@ class QChannelBot():
 
 		def _on_message(event, message: qqbot.Message):
 			"""On chat msg from QQ Channel"""
-			content = '<{}>'.format(message.author.username) + RemoveReg.sub(message.content, '', 1)
+			content = '<{}>'.format(message.author.username) + RemoveReg.sub('', message.content, 1)
 			qqbot.logger.info('Message sent to Minecraft server: ' + content)
 			chatClient.send_chat(str(message.content))
 		self.msg_handler = qqbot.Handler(qqbot.HandlerType.AT_MESSAGE_EVENT_HANDLER, _on_message)
