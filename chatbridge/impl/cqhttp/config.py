@@ -6,5 +6,3 @@ class CqHttpConfig(ClientConfig):
 	ws_port: int = 6700
 	access_token: str = ''
 	react_group_id: int = 12345
-	client_to_query_stats: str = 'MyClient1'
-	client_to_query_online: str = 'MyClient2'
