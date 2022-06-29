@@ -94,6 +94,8 @@ class CQBot(websocket.WebSocketApp):
 
 class CqHttpChatBridgeClient(ChatBridgeClient):
 	def on_chat(self, sender: str, payload: ChatPayload):
+		if payload.author == '':
+			return
 		global cq_bot
 		if cq_bot is None:
 			return
