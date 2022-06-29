@@ -56,5 +56,4 @@ def main():
 		print('{} cqhttp_bot: Start a CQ-Http bot as client'.format(prefix))
 		print('{} kaiheila_bot: Start a Kaiheila bot as client'.format(prefix))
 		print('{} qchannel_bot: Start a QQ Channel bot as client'.format(prefix))
-		print('{} online_command: Start a CQ-Http bot as client'.format(prefix))
-
+	
